@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-export function TodoListItem ({ id, text, checked}) {
+export function TodoListItem ({ id, text, checked, updateChecked}) {
     const [checkedState, setCheckedState] = useState(checked);
 
     function changeCheckBoxValue () {
         setCheckedState(!checkedState);
+        updateChecked(id, checkedState);
     }
 
     return (
